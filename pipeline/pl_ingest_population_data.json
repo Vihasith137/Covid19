@@ -9,7 +9,7 @@
 					{
 						"activity": "check if file exists",
 						"dependencyConditions": [
-							"Completed"
+							"Succeeded"
 						]
 					}
 				],
