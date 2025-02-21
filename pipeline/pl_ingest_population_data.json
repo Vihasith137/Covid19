@@ -114,9 +114,16 @@
 				}
 			},
 			{
-				"name": "If Condition1",
+				"name": "If Colum count matches",
 				"type": "IfCondition",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Get Metadata1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": []
 			}
 		],
