@@ -145,7 +145,7 @@
 							"sink": {
 								"type": "DelimitedTextSink",
 								"storeSettings": {
-									"type": "AzureBlobStorageWriteSettings"
+									"type": "AzureBlobFSWriteSettings"
 								},
 								"formatSettings": {
 									"type": "DelimitedTextWriteSettings",
@@ -172,7 +172,7 @@
 						],
 						"outputs": [
 							{
-								"referenceName": "ds_population_raw_gz",
+								"referenceName": "ds_raw_population_tsv",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -186,7 +186,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ds_population_raw_gz')]"
+				"[concat(variables('factoryId'), '/datasets/ds_population_raw_gz')]",
+				"[concat(variables('factoryId'), '/datasets/ds_raw_population_tsv')]"
 			]
 		}
 	]
