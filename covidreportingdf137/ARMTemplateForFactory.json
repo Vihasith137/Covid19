@@ -147,6 +147,7 @@
 					"location": {
 						"type": "AzureBlobFSLocation",
 						"fileName": "populationrawoutput",
+						"folderPath": "population",
 						"fileSystem": "raw"
 					},
 					"columnDelimiter": "\t",
