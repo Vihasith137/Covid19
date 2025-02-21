@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "covidreportingdf137"
+		},
+		"ls_ablod_covid19reporting_connectionString": {
+			"value": ""
+		},
+		"ls_covid19reportingdl_accountKey": {
+			"value": ""
+		},
+		"ls_covid19reportingdl_properties_typeProperties_url": {
+			"value": "https://covidreporting137.dfs.core.windows.net/"
+		}
+	}
+}
