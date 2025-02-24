@@ -61,6 +61,14 @@
 			}
 		],
 		"concurrency": 1,
+		"variables": {
+			"sourceRelativeURL": {
+				"type": "String"
+			},
+			"sinkFileName": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
