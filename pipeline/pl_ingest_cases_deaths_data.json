@@ -61,7 +61,13 @@
 				"outputs": [
 					{
 						"referenceName": "ds_casesdeath_http_data_dl",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"FileName": {
+								"value": "@variables('sinkFileName')",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
