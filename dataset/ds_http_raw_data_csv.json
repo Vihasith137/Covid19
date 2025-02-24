@@ -5,12 +5,16 @@
 			"referenceName": "ls_http_opendata_ecdc_europa_eu",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"relativeURL": {
+				"type": "string"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation",
-				"relativeUrl": "covid19/nationalcasedeath/csv"
+				"type": "HttpServerLocation"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
