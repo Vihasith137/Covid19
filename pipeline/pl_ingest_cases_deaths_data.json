@@ -76,7 +76,7 @@
 		"variables": {
 			"sourceRelativeURL": {
 				"type": "String",
-				"defaultValue": "covid19/hospitaladmissionrates/csv/"
+				"defaultValue": "covid19/hospitaladmissionrates/csv/data.csv"
 			},
 			"sinkFileName": {
 				"type": "String"
