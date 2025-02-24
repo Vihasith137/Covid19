@@ -49,7 +49,13 @@
 				"inputs": [
 					{
 						"referenceName": "ds_http_raw_data_csv",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"relativeURL": {
+								"value": "@variables('sourceRelativeURL')",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
