@@ -63,7 +63,8 @@
 		"concurrency": 1,
 		"variables": {
 			"sourceRelativeURL": {
-				"type": "String"
+				"type": "String",
+				"defaultValue": "covid19/hospitaladmissionrates/csv/"
 			},
 			"sinkFileName": {
 				"type": "String"
