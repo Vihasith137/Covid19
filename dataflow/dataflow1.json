@@ -76,7 +76,13 @@
 				"     multiple: false,",
 				"     pickup: 'any',",
 				"     broadcast: 'auto')~> lookupCountry",
-				"select1 pivot(columnNaming: '$N$V',",
+				"select1 pivot(groupBy(country,",
+				"          country_code,",
+				"          population,",
+				"          source,",
+				"          reported_date),",
+				"     pivotBy(indicator, ['confirmed cases']),",
+				"     columnNaming: '$N$V',",
 				"     lateral: true) ~> pivotcounts"
 			]
 		}
