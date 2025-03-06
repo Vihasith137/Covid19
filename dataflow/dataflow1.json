@@ -19,7 +19,15 @@
 					"name": "countrylookup"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_processed_cases_and_deaths",
+						"type": "DatasetReference"
+					},
+					"name": "casesanddeathsink"
+				}
+			],
 			"transformations": [
 				{
 					"name": "filtereuropeonly"
@@ -103,7 +111,14 @@
 				"          date_end",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> selectforsink"
+				"     skipDuplicateMapOutputs: true) ~> selectforsink",
+				"selectforsink sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> casesanddeathsink"
 			]
 		}
 	}
