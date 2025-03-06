@@ -46,7 +46,7 @@
 				"          indicator,",
 				"          weekly_count,",
 				"          source,",
-				"          each(match(name == 'date'),",
+				"          each(match(name=='date'),",
 				"               'reported'+'_date' = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
