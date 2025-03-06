@@ -1,0 +1,20 @@
+{
+	"name": "ds_raw_cases_and_death1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_covid19reportingdl",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "cases_death.xlsx",
+				"folderPath": "ecdc/cases_death",
+				"fileSystem": "raw"
+			}
+		},
+		"schema": []
+	}
+}
