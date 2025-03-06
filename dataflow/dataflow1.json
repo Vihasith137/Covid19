@@ -5,14 +5,15 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"name": "source1"
+					"name": "sourcecasesanddeaths",
+					"description": " dataset"
 				}
 			],
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1"
+				"     validateSchema: false) ~> sourcecasesanddeaths"
 			]
 		}
 	}
