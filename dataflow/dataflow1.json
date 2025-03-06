@@ -35,7 +35,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 filter(ERROR_FUNCTION('')) ~> filtereuropeonly"
+				"source1 filter(ERROR_FUNCTION('continent == __SINGLE_QUOTE__Europe__SINGLE_QUOTE__ && not(isNull(country_')) ~> filtereuropeonly"
 			]
 		}
 	}
