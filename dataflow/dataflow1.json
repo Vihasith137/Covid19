@@ -34,7 +34,7 @@
 					"name": "pivotcounts"
 				},
 				{
-					"name": "select"
+					"name": "selectforsink"
 				}
 			],
 			"scriptLines": [
@@ -103,7 +103,7 @@
 				"          date_end",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select"
+				"     skipDuplicateMapOutputs: true) ~> selectforsink"
 			]
 		}
 	}
