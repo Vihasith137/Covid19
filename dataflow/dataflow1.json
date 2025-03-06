@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "ds_casesdeath_http_data_dl",
+						"referenceName": "ds_http_raw_data_csv",
 						"type": "DatasetReference"
 					},
 					"name": "sourcecasesanddeaths",
