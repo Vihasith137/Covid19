@@ -32,6 +32,9 @@
 				},
 				{
 					"name": "pivotcounts"
+				},
+				{
+					"name": "select"
 				}
 			],
 			"scriptLines": [
@@ -72,8 +75,7 @@
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> select1",
-				"pivotcounts, countrylookup lookup(pivotcounts@country == countrylookup@Country",
-				"     && ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"pivotcounts, countrylookup lookup(pivotcounts@country == countrylookup@Country,",
 				"     multiple: false,",
 				"     pickup: 'any',",
 				"     broadcast: 'auto')~> lookupCountry",
@@ -85,7 +87,23 @@
 				"     pivotBy(indicator, ['confirmed cases', 'deaths']),",
 				"     count = sum(daily_count),",
 				"     columnNaming: '$V_$N',",
-				"     lateral: true) ~> pivotcounts"
+				"     lateral: true) ~> pivotcounts",
+				"lookupCountry select(mapColumn(",
+				"          country = pivotcounts@country,",
+				"          country_code,",
+				"          population,",
+				"          source,",
+				"          reported_date,",
+				"          {confirmed cases_count},",
+				"          deaths_count,",
+				"          Country = countrylookup@Country,",
+				"          Response_measure,",
+				"          change,",
+				"          date_start,",
+				"          date_end",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select"
 			]
 		}
 	}
