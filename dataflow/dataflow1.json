@@ -45,7 +45,9 @@
 				"          population,",
 				"          indicator,",
 				"          weekly_count,",
-				"          source",
+				"          source,",
+				"          each(match(name == 'date'),",
+				"               'reported'+'_date' = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> select1"
