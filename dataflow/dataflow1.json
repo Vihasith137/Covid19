@@ -22,7 +22,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "ds_processed_cases_and_deaths",
+						"referenceName": "ds_processed_cd",
 						"type": "DatasetReference"
 					},
 					"name": "casesanddeathsink"
@@ -78,8 +78,8 @@
 				"          indicator,",
 				"          daily_count,",
 				"          source,",
-				"          each(match(name == 'date'),",
-				"               'reported' + '_date' = $$)",
+				"          each(match(name=='date'),",
+				"               'reported'+'_date' = $$)",
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> select1",
@@ -114,6 +114,20 @@
 				"     skipDuplicateMapOutputs: true) ~> selectforsink",
 				"selectforsink sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          country as string,",
+				"          country_code as string,",
+				"          population as string,",
+				"          source as string,",
+				"          reported_date as string,",
+				"          {confirmed cases_count} as string,",
+				"          deaths_count as string,",
+				"          Country as string,",
+				"          Response_measure as string,",
+				"          change as string,",
+				"          date_start as string,",
+				"          date_end as string",
+				"     ),",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
