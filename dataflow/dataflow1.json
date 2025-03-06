@@ -29,6 +29,9 @@
 				},
 				{
 					"name": "lookupCountry"
+				},
+				{
+					"name": "pivotcounts"
 				}
 			],
 			"scriptLines": [
@@ -69,10 +72,12 @@
 				"     ),",
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: false) ~> select1",
-				"select1 lookup(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
+				"pivotcounts lookup(ERROR_FUNCTION('') == ERROR_FUNCTION(''),",
 				"     multiple: false,",
 				"     pickup: 'any',",
-				"     broadcast: 'auto')~> lookupCountry"
+				"     broadcast: 'auto')~> lookupCountry",
+				"select1 pivot(columnNaming: '$N$V',",
+				"     lateral: true) ~> pivotcounts"
 			]
 		}
 	}
