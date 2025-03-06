@@ -299,11 +299,8 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": {
-							"value": "@dataset().FileName",
-							"type": "Expression"
-						},
-						"folderPath": "ecdc",
+						"fileName": "cases_death.csv",
+						"folderPath": "ecdc/cases_death",
 						"fileSystem": "raw"
 					},
 					"columnDelimiter": ",",
