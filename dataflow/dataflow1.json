@@ -5,6 +5,10 @@
 		"typeProperties": {
 			"sources": [
 				{
+					"dataset": {
+						"referenceName": "ds_casesdeath_http_data_dl",
+						"type": "DatasetReference"
+					},
 					"name": "sourcecasesanddeaths",
 					"description": " dataset"
 				}
@@ -13,7 +17,8 @@
 			"transformations": [],
 			"scriptLines": [
 				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> sourcecasesanddeaths"
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> sourcecasesanddeaths"
 			]
 		}
 	}
