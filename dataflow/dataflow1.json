@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "ds_casesdeath_http_data_dl",
+						"referenceName": "ds_raw_cases_and_deaths",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -15,7 +15,20 @@
 			"sinks": [],
 			"transformations": [],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
+				"source(output(",
+				"          country as string,",
+				"          country_code as string,",
+				"          continent as string,",
+				"          population as string,",
+				"          indicator as string,",
+				"          weekly_count as string,",
+				"          year_week as string,",
+				"          rate_14_day as string,",
+				"          cumulative_count as string,",
+				"          source as string,",
+				"          note as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1"
 			]
